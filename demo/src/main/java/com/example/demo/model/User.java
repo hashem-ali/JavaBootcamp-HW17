@@ -1,5 +1,5 @@
 package com.example.demo.model;
-
+import jakarta.persistence.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -16,6 +16,7 @@ import lombok.NonNull;
 public class User {
     @Id
     @NotNull(message = "id must not be null")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Size(min = 4, message = "length must be more than 4")
     @NotEmpty(message = "name must not be empty")
